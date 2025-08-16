@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jigme Choden | Digital Portfolio</title>
+  <meta name="description" content="Digital Portfolio of Jigme Choden, Management Student | Leadership | Projects | Skills." />
+  <meta property="og:title" content="Jigme Choden Portfolio" />
+  <meta property="og:description" content="Business Management Student Portfolio." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://placehold.co/1200x630/3B82F6/FFFFFF?text=Jigme%20Choden" />
+  <link rel="icon" type="image/png" href="https://placehold.co/64x64/3B82F6/FFFFFF?text=JC" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap" rel="stylesheet" />
+  <link href="style.css" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/feather-icons"></script>
+  <style>
+    /* Resume Button Custom Styles */
+    .resume-btn {
+      background: linear-gradient(90deg, #3b82f6 0%, #a5b4fc 100%);
+      color: #fff !important;
+      border: none;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 4px 24px #3b82f655, 0 0 0 0 #fff0;
+      transition: box-shadow 0.3s, transform 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6em;
+      font-weight: 700;
+      font-size: 1.1rem;
+      letter-spacing: 0.02em;
+      outline: none;
+    }
+    .resume-btn:hover, .resume-btn:focus {
+      box-shadow: 0 8px 32px #3b82f6aa, 0 0 0 4px #a5b4fc44;
+      transform: translateY(-2px) scale(1.04);
+    }
+    .resume-btn .shine {
+      content: "";
+      position: absolute;
+      top: 0; left: -75%;
+      width: 50%; height: 100%;
+      background: linear-gradient(120deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0.7) 100%);
+      transform: skewX(-20deg);
+      transition: left 0.5s;
+      pointer-events: none;
+    }
+    .resume-btn:hover .shine {
+      left: 120%;
+      transition: left 0.5s;
+    }
+    .resume-btn svg {
+      width: 1.3em;
+      height: 1.3em;
+      vertical-align: middle;
+      margin-right: 0.2em;
+    }
+  </style>
+</head>
+<body class="bg-gray-100 text-gray-800 dark:bg-slate-900 dark:text-gray-200 transition-colors duration-300">
+
+  <!-- Floating Social Bar -->
+  <div class="fixed left-4 top-1/2 -translate-y-1/2 z-50 hidden md:flex flex-col gap-4">
+    <a href="mailto:jigme.choden2002@gmail.com" aria-label="Mail" target="_blank" class="bg-white dark:bg-slate-800 p-2 rounded-full shadow hover:bg-blue-100 dark:hover:bg-blue-900 hover:scale-110 transition"><i data-feather="mail"></i></a>
+    <a href="https://www.linkedin.com/in/jigme-choden" aria-label="LinkedIn" target="_blank" class="bg-white dark:bg-slate-800 p-2 rounded-full shadow hover:bg-blue-100 dark:hover:bg-blue-900 hover:scale-110 transition"><i data-feather="linkedin"></i></a>
+  </div>
+
+  <!-- Header and Navigation -->
+  <header class="bg-white/95 dark:bg-slate-800/95 backdrop-blur fixed top-0 left-0 right-0 z-40 shadow md:shadow-md transition-colors duration-200">
+    <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+      <a href="#home" class="text-2xl font-extrabold tracking-tight text-gray-900 dark:text-white">Jigme Choden</a>
+      <nav class="hidden md:flex items-center space-x-8">
+        <a href="#home" class="nav-link text-gray-600 dark:text-gray-200 hover:text-blue-600 font-medium transition nav-link-active">Home</a>
+        <a href="#about" class="nav-link text-gray-600 dark:text-gray-200 hover:text-blue-600 font-medium transition">About</a>
+        <a href="#experience" class="nav-link text-gray-600 dark:text-gray-200 hover:text-blue-600 font-medium transition">Experience</a>
+        <a href="#projects" class="nav-link text-gray-600 dark:text-gray-200 hover:text-blue-600 font-medium transition">Projects</a>
+        <a href="#skills" class="nav-link text-gray-600 dark:text-gray-200 hover:text-blue-600 font-medium transition">Skills</a>
+        <a href="#contact" class="nav-link text-gray-600 dark:text-gray-200 hover:text-blue-600 font-medium transition">Contact</a>
+      </nav>
+      <div class="flex gap-2 items-center">
+        <button id="theme-toggle" title="Toggle dark mode" class="text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 focus:outline-none transition">
+          <i data-feather="moon"></i>
+        </button>
+        <button id="mobile-menu-button" class="md:hidden text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400">
+          <i data-feather="menu"></i>
+        </button>
+      </div>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden shadow bg-white dark:bg-slate-900 border-t border-gray-200 dark:border-gray-700">
+      <a href="#home" class="block py-3 px-6 text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-slate-800 font-medium">Home</a>
+      <a href="#about" class="block py-3 px-6 text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-slate-800 font-medium">About</a>
+      <a href="#experience" class="block py-3 px-6 text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-slate-800 font-medium">Experience</a>
+      <a href="#projects" class="block py-3 px-6 text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-slate-800 font-medium">Projects</a>
+      <a href="#skills" class="block py-3 px-6 text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-slate-800 font-medium">Skills</a>
+      <a href="#contact" class="block py-3 px-6 text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-slate-800 font-medium">Contact</a>
+    </div>
+  </header>
+
+  <main class="pt-20 md:pt-24">
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center animate-gradient relative overflow-hidden">
+      <div class="absolute top-[-100px] left-[-100px] w-[400px] h-[400px] bg-blue-400/30 rounded-full blur-3xl"></div>
+      <div class="absolute right-[-100px] bottom-[-100px] w-[350px] h-[350px] bg-pink-400/20 rounded-full blur-3xl"></div>
+      <div class="z-10 w-full">
+        <div class="fade-in text-center relative">
+          <img src="assets/profile.jpg" alt="Jigme Choden" class="w-40 h-40 rounded-full mx-auto mb-6 border-4 border-white shadow-xl ring-4 ring-blue-100 object-cover">
+
+          <h1 class="text-5xl md:text-7xl font-extrabold text-gray-900 dark:text-white mb-3 transition">Jigme Choden</h1>
+          <p class="text-xl md:text-2xl text-gray-700 dark:text-gray-200 mb-8 max-w-3xl mx-auto">An ambitious and driven Business Administration student passionate about management, marketing, and finance.</p>
+          <div class="flex justify-center space-x-4 flex-wrap">
+            <a href="#contact" class="bg-blue-600 text-white font-bold px-8 py-3 rounded-lg hover:bg-blue-700 transition-transform transform hover:scale-105 duration-300 shadow-lg">Contact Me</a>
+            <a href="https://www.linkedin.com/in/jigme-choden" target="_blank" class="bg-white dark:bg-slate-900 text-gray-800 dark:text-gray-100 font-bold px-8 py-3 rounded-lg hover:bg-gray-200 dark:hover:bg-slate-800 transition-transform transform hover:scale-105 duration-300 border-2 border-gray-300 dark:border-gray-700 shadow-lg">View LinkedIn</a>
+            <a href="https://docs.google.com/document/d/1nCgtSYg9t7fJGDSw7LtaQ3fHMkGcHRIwsNUYJimsP0E/edit?usp=sharing" target="_blank" class="resume-btn relative px-8 py-3 rounded-lg shadow-lg focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:outline-none">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M12 16v-8m0 8l-4-4m4 4l4-4M4 20h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2z"/>
+              </svg>
+              Resume
+              <span class="shine"></span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 bg-white dark:bg-slate-900 transition-colors">
+      <div class="max-w-4xl mx-auto px-6 text-center">
+        <h2 class="text-4xl font-extrabold mb-4 fade-in">About Me</h2>
+        <p class="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto fade-in delay-[0.2s]">
+          I am currently pursuing an Integrated Masters in Business Administration at NIIT University. My experience includes a dynamic internship at the Royal Monetary Authority of Bhutan, where I delved into central banking operations and macroeconomic research. I thrive in leadership roles, having co-organized TEDx events and coordinated university clubs. My project work reflects my interest in financial literacy, marketing strategy, and sustainable business practices.
+        </p>
+      </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-24 relative bg-gradient-to-b from-slate-50 to-white dark:from-slate-800 dark:to-slate-900 transition-colors">
+      <div class="max-w-5xl mx-auto px-6">
+        <h2 class="text-4xl font-extrabold text-center mb-16 fade-in">Professional Journey</h2>
+        <div class="relative border-l-4 border-blue-200 dark:border-blue-800 ml-4 md:ml-16">
+          <!-- Experience items -->
+          <div class="mb-12 pl-12 relative fade-in">
+            <div class="timeline-dot"></div>
+            <p class="text-sm font-semibold text-blue-600 mb-1">June 2025 – July 2025</p>
+            <h3 class="text-2xl font-bold text-gray-900 dark:text-white">Finance &amp; Macroeconomic Research Intern</h3>
+            <p class="text-md font-medium text-gray-600 dark:text-gray-300 mb-3">Royal Monetary Authority of Bhutan</p>
+            <ul class="list-disc list-inside text-gray-600 dark:text-gray-400 space-y-2">
+              <li>Hands-on experience with central banking systems (BIRT, ICBS).</li>
+              <li>Research on monetary policy tools, contributing to institutional knowledge.</li>
+              <li>Authored reports on microfinance, showcasing analytical and communication skills.</li>
+            </ul>
+          </div>
+          <div class="mb-12 pl-12 relative fade-in" style="animation-delay:.1s;">
+            <div class="timeline-dot"></div>
+            <p class="text-sm font-semibold text-blue-600 mb-1">Nov 2023 - May 2024</p>
+            <h3 class="text-2xl font-bold text-gray-900 dark:text-white">Co-Organizer, TEDxNIITUniversity'24</h3>
+            <p class="text-md font-medium text-gray-600 dark:text-gray-300 mb-3">NIIT University, Neemrana</p>
+            <ul class="list-disc list-inside text-gray-600 dark:text-gray-400 space-y-2">
+              <li>Led and coordinated teams, ensuring seamless event execution.</li>
+              <li>Managed volunteers, delegating tasks effectively.</li>
+            </ul>
+          </div>
+          <div class="pl-12 relative fade-in" style="animation-delay:.2s;">
+            <div class="timeline-dot"></div>
+            <p class="text-sm font-semibold text-blue-600 mb-1">Oct 2023 - Dec 2024</p>
+            <h3 class="text-2xl font-bold text-gray-900 dark:text-white">Coordinator, NU Runs Club</h3>
+            <p class="text-md font-medium text-gray-600 dark:text-gray-300 mb-3">NIIT University, Neemrana</p>
+            <ul class="list-disc list-inside text-gray-600 dark:text-gray-400 space-y-2">
+              <li>Organized major athletic events, promoting student engagement.</li>
+              <li>Fostered collaboration with other university clubs for cross-functional events.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-24 bg-white dark:bg-slate-900 transition-colors">
+      <div class="max-w-6xl mx-auto px-6">
+        <h2 class="text-4xl font-extrabold text-center mb-16 fade-in">Signature Projects</h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div class="bg-white dark:bg-slate-800 rounded-xl shadow-lg p-8 border border-gray-100 dark:border-gray-700 hover:-translate-y-2 transform transition duration-300 fade-in">
+            <div class="flex items-center justify-center h-16 w-16 rounded-full bg-blue-100 dark:bg-blue-900 mb-6">
+              <i data-feather="bar-chart-2" class="text-blue-600 dark:text-blue-300 w-8 h-8"></i>
+            </div>
+            <h3 class="text-2xl font-bold mb-3">Capstone: Youth Financial Literacy</h3>
+            <p class="text-gray-600 dark:text-gray-300">A data-driven project to enhance financial education for Bhutanese youth, culminating in actionable recommendations for curriculum improvement.</p>
+          </div>
+          <div class="bg-white dark:bg-slate-800 rounded-xl shadow-lg p-8 border border-gray-100 dark:border-gray-700 hover:-translate-y-2 transform transition duration-300 fade-in" style="animation-delay:.1s;">
+            <div class="flex items-center justify-center h-16 w-16 rounded-full bg-green-100 dark:bg-green-900 mb-6">
+              <i data-feather="smartphone" class="text-green-600 dark:text-green-200 w-8 h-8"></i>
+            </div>
+            <h3 class="text-2xl font-bold mb-3">NU Pitchers: IndianTales App</h3>
+            <p class="text-gray-600 dark:text-gray-300">Led marketing strategy as CMO for a conceptual app, handling campaign ideation and market research with focus groups.</p>
+          </div>
+          <div class="bg-white dark:bg-slate-800 rounded-xl shadow-lg p-8 border border-gray-100 dark:border-gray-700 hover:-translate-y-2 transform transition duration-300 fade-in" style="animation-delay:.2s;">
+            <div class="flex items-center justify-center h-16 w-16 rounded-full bg-purple-100 dark:bg-purple-900 mb-6">
+              <i data-feather="droplet" class="text-purple-600 dark:text-purple-300 w-8 h-8"></i>
+            </div>
+            <h3 class="text-2xl font-bold mb-3">HULT Prize: Sustainable Fashion</h3>
+            <p class="text-gray-600 dark:text-gray-300">Co-developed a business concept for reducing water wastage in fashion, focusing on innovation and management.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-24 bg-gradient-to-b from-slate-50 to-white dark:from-slate-800 dark:to-slate-900 transition-colors">
+      <div class="max-w-4xl mx-auto px-6">
+        <h2 class="text-4xl font-extrabold text-center mb-12 fade-in">Skills &amp; Tools</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 justify-items-center">
+          <div class="text-center flex flex-col items-center fade-in">
+            <div class="relative mb-4">
+              <svg width="100" height="100" class="rotate-[-90deg]">
+                <circle cx="50" cy="50" r="42" stroke="#e5e7eb" stroke-width="10" fill="none" />
+                <circle
+                  class="skill-progress"
+                  data-skill="90"
+                  cx="50" cy="50"
+                  r="42"
+                  stroke="#3b82f6"
+                  stroke-width="10"
+                  fill="none"
+                  stroke-dasharray="264"
+                  stroke-dashoffset="264"
+                  style="transition: stroke-dashoffset 1.5s ease;"
+                />
+              </svg>
+              <span class="absolute inset-0 flex items-center justify-center text-2xl font-bold text-blue-600 dark:text-blue-400">90%</span>
+            </div>
+            <div class="mb-2">
+              <i data-feather="users" class="w-8 h-8 text-blue-500 dark:text-blue-400 mb-2"></i>
+              <div class="font-semibold text-lg">Leadership</div>
+            </div>
+          </div>
+          <div class="text-center flex flex-col items-center fade-in">
+            <div class="relative mb-4">
+              <svg width="100" height="100" class="rotate-[-90deg]">
+                <circle cx="50" cy="50" r="42" stroke="#e5e7eb" stroke-width="10" fill="none" />
+                <circle
+                  class="skill-progress"
+                  data-skill="80"
+                  cx="50" cy="50"
+                  r="42"
+                  stroke="#10b981"
+                  stroke-width="10"
+                  fill="none"
+                  stroke-dasharray="264"
+                  stroke-dashoffset="264"
+                  style="transition: stroke-dashoffset 1.5s ease;"
+                />
+              </svg>
+              <span class="absolute inset-0 flex items-center justify-center text-2xl font-bold text-green-600 dark:text-green-400">80%</span>
+            </div>
+            <div class="mb-2">
+              <i data-feather="trending-up" class="w-8 h-8 text-green-500 dark:text-green-400 mb-2"></i>
+              <div class="font-semibold text-lg">Marketing</div>
+            </div>
+          </div>
+          <div class="text-center flex flex-col items-center fade-in">
+            <div class="relative mb-4">
+              <svg width="100" height="100" class="rotate-[-90deg]">
+                <circle cx="50" cy="50" r="42" stroke="#e5e7eb" stroke-width="10" fill="none" />
+                <circle
+                  class="skill-progress"
+                  data-skill="75"
+                  cx="50" cy="50"
+                  r="42"
+                  stroke="#a855f7"
+                  stroke-width="10"
+                  fill="none"
+                  stroke-dasharray="264"
+                  stroke-dashoffset="264"
+                  style="transition: stroke-dashoffset 1.5s ease;"
+                />
+              </svg>
+              <span class="absolute inset-0 flex items-center justify-center text-2xl font-bold text-purple-600 dark:text-purple-400">75%</span>
+            </div>
+            <div class="mb-2">
+              <i data-feather="bar-chart-2" class="w-8 h-8 text-purple-500 dark:text-purple-400 mb-2"></i>
+              <div class="font-semibold text-lg">Financial Analysis</div>
+            </div>
+          </div>
+          <div class="text-center flex flex-col items-center fade-in">
+            <div class="relative mb-4">
+              <svg width="100" height="100" class="rotate-[-90deg]">
+                <circle cx="50" cy="50" r="42" stroke="#e5e7eb" stroke-width="10" fill="none" />
+                <circle
+                  class="skill-progress"
+                  data-skill="85"
+                  cx="50" cy="50"
+                  r="42"
+                  stroke="#f59e42"
+                  stroke-width="10"
+                  fill="none"
+                  stroke-dasharray="264"
+                  stroke-dashoffset="264"
+                  style="transition: stroke-dashoffset 1.5s ease;"
+                />
+              </svg>
+              <span class="absolute inset-0 flex items-center justify-center text-2xl font-bold text-orange-500 dark:text-orange-300">85%</span>
+            </div>
+            <div class="mb-2">
+              <i data-feather="calendar" class="w-8 h-8 text-orange-500 dark:text-orange-300 mb-2"></i>
+              <div class="font-semibold text-lg">Project Mgmt.</div>
+            </div>
+          </div>
+          <div class="text-center flex flex-col items-center fade-in">
+            <div class="relative mb-4">
+              <svg width="100" height="100" class="rotate-[-90deg]">
+                <circle cx="50" cy="50" r="42" stroke="#e5e7eb" stroke-width="10" fill="none" />
+                <circle
+                  class="skill-progress"
+                  data-skill="95"
+                  cx="50" cy="50"
+                  r="42"
+                  stroke="#3b82f6"
+                  stroke-width="10"
+                  fill="none"
+                  stroke-dasharray="264"
+                  stroke-dashoffset="264"
+                  style="transition: stroke-dashoffset 1.5s ease;"
+                />
+              </svg>
+              <span class="absolute inset-0 flex items-center justify-center text-2xl font-bold text-blue-600 dark:text-blue-400">95%</span>
+            </div>
+            <div class="mb-2">
+              <i data-feather="heart" class="w-8 h-8 text-blue-500 dark:text-blue-400 mb-2"></i>
+              <div class="font-semibold text-lg">Teamwork</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 bg-white dark:bg-slate-900 transition-colors">
+      <div class="max-w-3xl mx-auto px-6 text-center">
+        <h2 class="text-4xl font-extrabold mb-4 fade-in">Get In Touch</h2>
+        <p class="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto mb-10 fade-in">I am actively seeking new opportunities. Whether you have a question or want to connect, my inbox is open.</p>
+        <div class="flex flex-col md:flex-row justify-center items-center space-y-6 md:space-y-0 md:space-x-8 fade-in">
+          <a href="mailto:jigme.choden2002@gmail.com" class="flex items-center space-x-3 text-lg font-medium text-gray-700 dark:text-gray-200 hover:text-blue-600 hover:scale-105 dark:hover:text-blue-400 transition"><i data-feather="mail"></i><span>jigme.choden2002@gmail.com</span></a>
+          <a href="https://www.linkedin.com/in/jigme-choden" target="_blank" class="flex items-center space-x-3 text-lg font-medium text-gray-700 dark:text-gray-200 hover:text-blue-600 hover:scale-105 dark:hover:text-blue-400 transition"><i data-feather="linkedin"></i><span>LinkedIn</span></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-gray-900 dark:bg-slate-900 text-white py-8">
+    <div class="max-w-6xl mx-auto px-6 text-center">
+      <p class="font-semibold">&copy; 2025 Jigme Choden. All Rights Reserved.</p>
+      <p class="text-sm text-gray-400 mt-2">Crafted with Code &amp; Coffee</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    feather.replace();
+  </script>
+</body>
+</html>
